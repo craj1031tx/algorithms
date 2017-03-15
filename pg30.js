@@ -93,6 +93,31 @@ var isPrime = function(num){
 
 //Make a function that, given a number and a digit place number, returns the 0-9 value at that digit place number position
 var extractNumber = function(num, digit){
-	var newNum = num%(10*digit)
+	//gives us a number where the wanted digit is in the units place. 
+	var wantedInUnit = num/Math.pow(10,digit-1);
+	//returns the value of the units place by giving the remainder of the original number when divided by 10.
+	return wantedInUnit%10;
 }
 
+//Make a function that returns the most significant digit in a number
+//DOESN'T WORK!!!
+var mostSigDigit = function(num){
+	if(num>1){
+		var trigger = true;
+		while(trigger){
+			if(num%10 != 0){
+				var store = num%10
+			}
+			num = Math.floor(num/10);
+			if(num<1){
+				trigger = false;
+			}
+		}
+	}
+	else{
+		var test = 123;
+	}
+	return store;
+}
+
+console.log(mostSigDigit(1));
