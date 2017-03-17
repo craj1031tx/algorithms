@@ -11,4 +11,5 @@ class Node{
 	};
 };
 
-module.exports = {SLL};
+module.exports = {SLL, Node};
+
