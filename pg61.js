@@ -2,6 +2,7 @@
 
 //importing sll class from SLL.js
 const{SLL} = require("./SLL.js");
+const{node} = require("./SLL.js");
 
 SLL.prototype.back = function(){
 	var runner = this.head;

@@ -35,6 +35,58 @@ var evensAndOdds = function(arr){
 
 
 
-var arr = [0,1,2,2,2,4,3,5,7,2,3,4,5,5,5]
+// var eval = "("
 
-evensAndOdds(arr);
+// switch(eval){
+// 	case "a":
+// 		var hello = "a";
+// 		console.log("in a");
+// 		break;
+// 	case "b":
+// 		var hello = "b";
+// 		console.log("in b");
+// 		break;
+// 	case "(":
+// 		var hello = "(";
+// 		console.log("in (");
+// 		break;
+// 	default:
+// 		console.log("in default..");
+// 		var hello = "default"
+// 		break;
+// }
+
+// console.log(hello)
+
+var strEncode = function(str){
+	str += ' ';
+	var newStr = "";
+	for(var i=0;i<str.length;i++){
+		if(!current){
+			var current = str[i];
+			var currentCount = 1;
+		}
+		if(str[i] != current){
+			switch(currentCount){
+				case 1:
+					newStr += current;
+					break;
+				case 2:
+					newStr += current + current;
+					break;
+				default:
+					newStr += currentCount.toString();
+					newStr += current;
+					break;
+			}
+			current = str[i];
+			currentCount = 1;
+			continue;
+		}
+		currentCount++;
+	}
+	return newStr;
+}
+
+//console.log(strEncode("aaaabbbbcccccddeee"))
+
